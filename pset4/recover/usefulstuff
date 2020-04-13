@@ -1,0 +1,53 @@
+   /* use fread (data, size, number, inptr)
+      data = pointer to where you'll store data that you're reading
+      size = size of each element ie 1 byte, 2 bytes, etc.
+      number = number of elements
+      inptr = File * that you actually want to read from
+
+       to check for jpeg for each 512 byte block
+       byte buffer[0] == 0xff
+       byte buffer[1] == 0xd8
+       byte buffer[2] == 0xff
+       for the fourth byte, we can use bitwise arithmetic function & (ie bitwise AND)
+       Bitwise operators function as such
+       1110 & 1000 = 1000, or 1110 | 1000 = 1110.
+
+       For this 8-bit byte we have, ie 0xf0 = 11110000 (ie ignoring the first four bits)
+       Comparing it with our buffer[3] if it has the desired results, (ie 0xe* where * = 1 to F) 111----
+       Then using a bitwise AND on these two, we get 00010000 or e0, ie regardless if its 1 to F, we'll always
+       get e0 as the result
+
+       byte buffer[3] & 0xf0 == 0xe0
+
+       Making a jpeg file
+       ###.jpg using digits
+
+       To keep track of the number of jpegs
+       sprintf (filename , "%03i.jpg", 2)  %03i. means print an integer with 3 digits and "2" is what you want to
+       replace it with
+
+       Create file name
+       File *img = fopen(filename, "w") //meaning write
+
+       To write data on a file, use fwrite (data, size, number, outptr)
+       data = pointer of bytes you want to write on the file
+       size = size of each element
+       number = number of elements
+       outptr = File* that you want to write in
+
+       To detect end of the file
+       fread() returns number of size "size"
+
+     */
+
+
+
+       Pseudocode
+       1) Open memory card
+       2) Repeat until end of card
+       3) Read 512 bytes into a buffer
+       4) If start of new JPEG
+            -) if first JPEG
+            -) else go to another file
+       5) If not the start of a new JPEG
+       6) IF at the end, close any remaining files

@@ -1,0 +1,18 @@
+Checking validity of input
+1) Check if number of arguments is 2 (ie argc == 2)
+2) If false, print the appropriate message and return 1
+3) If true, convert the user input in the command line (ie from the array argv[1]) from string to int
+4) Check if the input from the user is indeed an integer and create a boolean to store whether it is valid or not
+5) If invalid, print the appropriate message and return 1
+6) If valid, proceed to the program
+
+Algorithm
+1) Store all the letters of the alphabet, both uppercase and lowercase into two separate arrays for comparison purposes
+2) To obtain the cipher code per the user's input, convert each character of the string into integers
+3) If said character is lowercase, subtract 97 from it so as to make 'a' = 0, 'b' = 1, etc.
+4) Likewise do the same if said character is uppercase, albeit subtracting 65
+5) If the character is not a letter (ie a punctuation mark, white bar) print as normal
+6) Using the formula (ch + k)%26, determine the new position or character after the addition of integer k
+7) This formula determines the position of the character in our alphabet arrays
+8) If lowercase, print the character of position ((ch+k)%26) from the lowercase array
+9) If uppercase, print the character of position ((ch+k)%26) from the uppercase array
