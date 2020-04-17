@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>
+            Text Dropdown
+        </title>
+    </head>
+    <body>
+        <p> This is a paragraph</p>
+        <select id = "SELECT">
+            <option value = 'large'> Large </option>
+            <option value = 'initial' selected> Medium </option>
+            <option value = 'small'> Small </option>
+        </select>
+        <script>
+                document.querySelector('select').onchange = function()
+                {
+                    document.querySelector('p').style.fontSize = this.value;
+                }
+        </script>
+    </body>
+</html>
+

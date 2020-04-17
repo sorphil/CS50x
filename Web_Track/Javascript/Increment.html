@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>
+            Increment
+        </title>
+        <script>
+            let counter = 0;
+            function count()
+            {
+                counter++;
+                document.querySelector('#result').innerHTML = counter;
+            }
+        </script>
+    </head>
+    <body>
+        <form onsubmit = "count();" return false;">
+            <input type = "submit" value = "increment">
+        </form>
+        <div id = "result">
+        </div>
+    </body>
+</html>

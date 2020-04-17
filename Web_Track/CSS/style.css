@@ -1,0 +1,24 @@
+style
+		    h1
+		    {
+		        text-align: center;
+		        color: black;
+		        font-family: sans-serif;
+		    }
+		    h2
+		    {
+		        text-align: right;
+		        color: red;
+		        font-family: sans-serif;
+		    }
+		    body
+		    {
+		        background-color: white;
+		        font-family: sans-serif;
+		    }
+            p
+		    {
+		        text-align: left;
+		        color:blue;
+		        font-family: sans-serif;
+		    }
