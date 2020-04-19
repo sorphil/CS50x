@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block body %}
+<form action = "/add" method = "post"> <!-- GET carries request parameter appended in URL string while POST carries request parameter in message body -->
+    <input id = "task1" name = "task" type = "text", placeholder = "Task Name"> <!-- placeholder is what appears in the text box when empty -->
+    <input id = "submit1" type = "submit" disabled>
+</form>
+<script>
+    document.querySelector('#task1').onkeyup = function(){ 
+        if(document.querySelector('#task1').value === '') //when nothing is entered
+        {
+            document.querySelector('#submit1').disabled = true //disabled
+        }
+        else
+        {
+            document.querySelector('#submit1').disabled = false
+        }
+    }
+</script>
+{% endblock %}
