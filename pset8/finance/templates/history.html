@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+<div style = "font-size: 50px; text-align:middle;"> <b> Welcome Back {{instructors["in_first"]}} {{instructors["in_last"]}}</b></div>
+<table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Transacted</th>
+            </tr>
+        </thead>
+
+        <tbody>
+                {% for row in instructors %}
+                <tr>
+                    <td>{{row["symbol"]}}</td>
+                    <td>{{row["name"]}}</td>
+                    <td>{{row["shares"]}}</td>
+                    <td>{{row["price"]| usd}}</td>
+                    <td>{{row["transacted"]| usd}}</td>
+                </tr>
+                {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}
