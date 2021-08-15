@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Apply To A Course
+{% endblock %}
+
+{% block main %}
+
+        <form action="/applycourse" method="post" type="text">
+        <a class="btn btn-primary btn-lg btn-block" href ="/math">Mathematics </a>
+        <br>
+        <a class="btn btn-secondary btn-lg btn-block" href ="/csc">Computer Science</a>
+        <br>
+        <a class="btn btn-primary btn-lg btn-block"href ="/chem">Chemistry</a>
+        <br>
+        <a class="btn btn-secondary btn-lg btn-block"href ="/phys">Physics</a>
+        <br>
+        <a class="btn btn-primary btn-lg btn-block"href ="/art">Art</a>
+        <br>
+        <a class="btn btn-secondary btn-lg btn-block"type="submit" href ="/religion">Religion</a>
+        <br>
+        <a class="btn btn-primary btn-lg btn-block"type="submit" href ="/bio">Biology</a>
+        <br>
+        <a  class="btn btn-secondary btn-lg btn-block"type="submit" href ="/med">Medicine</a>
+        <br>
+        <a class="btn btn-primary btn-lg btn-block"type="submit"href ="/music">Music</a>
+        <br>
+        <a class="btn btn-secondary btn-lg btn-block"type="submit"href ="/politics">Politics</a>
+        <br>
+        <a class="btn btn-primary btn-lg btn-block"type="submit"href ="/socio">Sociology</a>
+        <br>
+        </form>
+
+
+{% endblock %}

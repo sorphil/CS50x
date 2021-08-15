@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Student Gradebook
+{% endblock %}
+
+
+
+{% block main %}
+<div style = "font-size: 50px; text-align:middle;"> <b> Your Courses</b></div>
+<table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>Course ID</th>
+                <th>Course</th>
+                <th>Student Name</th>
+                <th>Subject</th>
+                <th>Grades</th>
+            </tr>
+        </thead>
+         <tbody>
+                {% for row in courses %}
+                <tr>
+                    <td>{{row["id"]}}</td>
+                    <td>{{row["name"]}}</td>
+                    <td>{{row["student_name"]}}</td>
+                    <td>{{row["subject"]}}</td>
+                    {% if row["grade"] == "Ungraded" %}
+                    <form action="/instructorgrade" method="post">
+                    <td><button class="btn btn-dark" name = "cid" type="submit" value = "{{row['id']}}">Ungraded</button></td>
+                    </form>
+                    {% else %}
+                    <td>{{row["grade"]}}</td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+        </tbody>
+    </table>
+    <p style = "font-size: 30px"> <b> </b> </p>
+{% endblock %}

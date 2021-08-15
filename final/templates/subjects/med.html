@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+: Medicine
+{% endblock %}
+
+{% block main %}
+
+
+<div style = "font-size: 50px; text-align:middle;"> <b> Medicine</b></div>
+<table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>Course ID</th>
+                <th>Course</th>
+                <th>Instructor</th>
+                <th>Level</th>
+                <th>Price</th>
+                <th>Apply Here</th>
+            </tr>
+        </thead>
+        <tbody>
+ <tbody>
+                {% for row in courses %}
+                <tr>
+                    <td>{{row["id"]}}</td>
+                    <td>{{row["name"]}}</td>
+                    <td>{{row["instructor"]}}</td>
+                    <td>{{row["level"]}}</td>
+                    <td>{{row["price"]|usd}}</td>
+                    <form action="/med" method="post">
+                    <td><button class="btn btn-dark" name = "cid" type="submit" value = "{{row['id']}}">Apply</button></td>
+                            </form>
+                </tr>
+                {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Create A Course
+{% endblock %}
+
+{% block main %}
+
+        <form action="/createcourse" method="post">
+        <div class="form-group">
+            <label style = "padding:20px;">Subject </label>
+            <select class="form-control" name="subject">
+                {% for row in subjects %}
+              <option>{{row}}</option>
+              {% endfor %}
+            </select>
+        </div>
+        <p>
+        <div>
+        <label style = "padding:20px;"> Course Name </label>
+        <input class="form-control" name="course" type="text">
+        </p>
+        </div>
+        <div>
+        <label style = "padding:20px;"> Course ID </label>
+        <input class="form-control" name="courseid" type="number" min = "1" max="999">
+        </p>
+        </div>
+        <div>
+            <label style = "padding:20px;">Price </label>
+            <select class="form-control" name="price">
+              <option>{{650}}</option>
+              <option>{{800}}</option>
+              <option>{{1000}}</option>
+            </select>
+        </div>
+        <div>
+            <label style = "padding:20px;">Level </label>
+            <select class="form-control" name="level">
+              <option>Freshman</option>
+              <option>Sophomore</option>
+              <option>Junior</option>
+            <option>Senior</option>
+            </select>
+        </div>
+        <button class="btn btn-dark" type="submit">Create</button>
+        </form>
+
+
+{% endblock %}

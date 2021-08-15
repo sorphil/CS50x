@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Student Gradebook
+{% endblock %}
+
+
+
+{% block main %}
+{{level}}
+<table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>Course ID</th>
+                <th>Course</th>
+                <th>Instructor</th>
+                <th>Subject</th>
+                <th>Grades</th>
+                <th>Teacher's Remarks</th>
+            </tr>
+        </thead>
+         <tbody>
+                {% for row in courses %}
+                <tr>
+                    <td>{{row["id"]}}</td>
+                    <td>{{row["name"]}}</td>
+                    <td>{{row["instructor"]}}</td>
+                    <td>{{row["subject"]}}</td>
+                    <td> {{row["grade"]}}</td>
+                    <td> {{row["notes"]}}</td>
+
+                </tr>
+                {% endfor %}
+        </tbody>
+    </table>
+    <p style = "font-size: 30px"> <b> </b> </p>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+
+
+{% block main %}
+{{level}}
+<table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>Course ID</th>
+                <th>Course</th>
+                <th>Instructor</th>
+                <th>Subject</th>
+            </tr>
+        </thead>
+         <tbody>
+                {% for row in courses %}
+                <tr>
+                    <td>{{row["id"]}}</td>
+                    <td>{{row["name"]}}</td>
+                    <td>{{row["instructor"]}}</td>
+                    <td>{{row["subject"]}}</td>
+                </tr>
+                {% endfor %}
+        </tbody>
+    </table>
+    <p style = "font-size: 30px"> <b> Current Balance = {{balance|usd}}</b> </p>
+{% endblock %}

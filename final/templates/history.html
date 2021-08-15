@@ -5,7 +5,6 @@
 {% endblock %}
 
 {% block main %}
-<div style = "font-size: 50px; text-align:middle;"> <b> Welcome Back {{instructors["in_first"]}} {{instructors["in_last"]}}</b></div>
 <table class="table table-striped">
         <thead>
             <tr>
@@ -18,13 +17,13 @@
         </thead>
 
         <tbody>
-                {% for row in instructors %}
+                {% for row in history %}
                 <tr>
                     <td>{{row["symbol"]}}</td>
                     <td>{{row["name"]}}</td>
                     <td>{{row["shares"]}}</td>
                     <td>{{row["price"]| usd}}</td>
-                    <td>{{row["transacted"]| usd}}</td>
+                    <td>{{row["transacted"]}}</td>
                 </tr>
                 {% endfor %}
         </tbody>
